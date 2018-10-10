@@ -1,8 +1,8 @@
 // Set up MySQL connection.
 var Sequelize = require("sequelize");
-var sequelize = new Sequelize("burgers_db","root","root",{
-   host: "localhost",
-   port: 8889,
+var sequelize = new Sequelize("h7c3upa4r0lqhi91","hdco6ft1y2th5uj3","vi1ctx4wp9pwkd66",{
+   host: "l6slz5o3eduzatkw.cbetxkdyhwsb.us-east-1.rds.amazonaws.com",
+   port: 3306,
    dialect: "mysql",
    pool: {
     max: 5,
