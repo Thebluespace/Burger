@@ -1,6 +1,6 @@
 var db = require("../model/burgers.js");
 var express = require("express");
-var router = express.router();
+var router = express.Router();
 
 router.get("/", (req,res) => {
     try {
@@ -34,7 +34,6 @@ router.post("/newburger", (req,res) => {
         res.send({"error": error.message});
     }
 });
-
 router.put("/burger/:id", (req,res) => {
     try {
         db.put({devoured: req.body.dev},{

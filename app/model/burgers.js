@@ -8,9 +8,10 @@ var burgers = connection.define("burgers",{
 burgers.sync();
 try {
     burgers.findAll().then(data => {
-        console.log(data);
+        //console.log(data);
         if (data.length === 0){
-            burgers.bulkCreate({burger_name: "The Ron Swanson", devoured: false},{burger_name: "Krabby Patty", devoured: false},{burger_name: "The Quadruple Bypass Burger", devoured: false}).then(data =>{
+            console.log("table empty - populating table");
+            burgers.bulkCreate([{burger_name: "The Ron Swanson", devoured: false},{burger_name: "Krabby Patty", devoured: false},{burger_name: "The Quadruple Bypass Burger", devoured: false}]).then(data =>{
                 console.log(data);
                 module.exports = burgers;
             }).catch(err => {console.log(err)});
@@ -21,3 +22,4 @@ try {
 } catch (error) {
     console.log(error);
 }
+module.exports = burgers;
